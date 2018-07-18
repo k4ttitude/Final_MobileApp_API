@@ -3,26 +3,23 @@ var config = require('./config');
 
 var conn = mysql.createConnection(config.dbConfig);
 
-exports.getStudentByRollNumber = function (rollNumber) {
+exports.getStudentByRollNumber = function (rollNumber, callback) {
 	let queryString = "SELECT * FROM `student` WHERE rollNumber = '" + rollNumber + "'";
-	conn.query(queryString, function (err, result, fields) {
-		if (err || !result[0]) {
-			// let data = { success: 0 }
-			return null;
+	conn.query(queryString, function (err, result) {
+		if (err) {
+			return callback(err, null);
 		}
-		console.log(result);
-		return result[0];
+		// console.log(result);
+		callback(null, result[0]);
 	});
 }
 
-exports.getStudentsByName = function (name) {
+exports.getStudentsByName = function (name, callback) {
 	let queryString = "SELECT * FROM `student` WHERE fullName like '%" + name + "%'";
 	conn.query(queryString, function (err, result, fields) {
 		if (err || !result) {
-			// let data = { success: 0 }
-			return null;
+			return callback (err, null);
 		}
-		console.log(result);
-		return result;
+		callback(null, result);
 	});
 }

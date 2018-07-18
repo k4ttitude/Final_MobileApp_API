@@ -1,5 +1,11 @@
 # API getting student data
 
+## URL
+```
+getStudent?rollNumber=SE123456
+getStudent?name=BaoNguyen
+```
+
 ## Quick start
 
 ```
@@ -17,11 +23,4 @@ By default, it's
 ### Database name
 ```
 mobile
-```
-
-
-## URL
-```
-getStudent?rollNumber=SE123456
-getStudent?name=BaoNguyen
 ```
