@@ -1,6 +1,6 @@
 var config = {};
 
-exports.dbConfig = {
+config.dbConfig = {
 	host: 'localhost',
 	user: 'root',
 	password: '123456',
@@ -8,4 +8,6 @@ exports.dbConfig = {
 	acquireTimeout: 1000000
 }
 
-exports.port = 8081;
+config.port = 8081;
+
+module.exports = config;

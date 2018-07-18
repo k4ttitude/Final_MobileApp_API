@@ -23,7 +23,8 @@ app.get('/getStudent', function(req,res) {
 });
 
 var server = app.listen(PORT, function () {
-	var host = server.address().address;
+	// var host = server.address().address;
+	let host = config.dbConfig.host;
 	console.log('API server is listening at http://%s:%s', host, PORT);
 });
 
